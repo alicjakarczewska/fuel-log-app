@@ -1,0 +1,52 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <div>
+        <h1>Hello, {{request.user|title}}!</h1>
+        <h3>Your Fuel Log</h3>
+    </div>
+    
+    {% if request.user.is_authenticated %}
+    <a href='{% url "logout" %}'>Logout</a>
+    {% else %}
+    <a href='{% url "login" %}'>Login</a>
+    {% endif %}
+</div>
+
+<div id="search-add-wrapper">
+    <form method='GET' style="margin-top: 20px; display: flex; gap: 12px;">
+        <input type='text' name='searching' value={{search_input}} >
+        <input class="button" type='submit' value='Search' >
+    </form>
+    <a id="add-link" href='{% url "ref-create" %}'>&#x2b;</a>
+</div>
+
+<div class="ref-items-wrapper">
+    {% for refueling in refuelings %}
+        <div class="ref-wrapper">
+            <div class="ref-title"> 
+                <p><b>
+                    <a href='{% url "ref-update" refueling.id %}'>{{refueling}}</a>
+                </b></p>      
+                <p>
+                Fuel price: <b>{{refueling.price_per_liter|floatformat:2}}</b> zł&emsp;
+                Amount: <b>{{refueling.amount|floatformat:2}}</b> zł&emsp;                 
+                </p>
+                <p>
+                    Added: <b>{{refueling.created|date:"d.m.Y"}}</b>&emsp;       
+                </p>
+                <p>
+                    Location: <b>{{refueling.location}}</b> 
+                </p>             
+            </div>    
+            <div>
+            <a class="delete-link" href='{% url "ref-delete" refueling.id %}'>&#215</a>
+            </div>
+        </div>
+     {% empty %}
+    <h4 style="padding:10px">No refuelings in list<h4>
+    {% endfor %}
+</div>
+
+{% endblock content %}

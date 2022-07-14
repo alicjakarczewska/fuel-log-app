@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Refuelings List</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Nunito|Raleway" rel="stylesheet">
+    <style>
+      body {
+        background-color: #fafafa;
+        font-family: 'Nunito', sans-serif;
+        padding-top: 50px;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Raleway', sans-serif;
+        font-weight: 200;
+      }
+
+      a, p {
+        color: #0f0fb8;
+      }
+
+      .container{
+        max-width: 600px;
+        margin: auto;
+        background-color: #fff;
+        -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+        box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+      }
+
+      .header-bar {
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px 5px 0 0;
+        background: rgb(6,0,108);
+        background: linear-gradient(25deg, rgba(6,0,108,1) 0%, rgba(15,15,184,1) 35%, rgba(0,212,255,1) 100%);
+      }
+
+      .header-bar a {
+        color: #fafafa;
+        text-decoration: none;
+      }
+
+      .ref-items-wrapper {
+        margin-top: 15px;
+      }
+
+      .ref-wrapper {
+        display: flex;
+        justify-content: space-between;
+        color: black;
+        padding: 10px;
+        border-top: 1px solid #f4f4f4;
+        background-color: #fff;        
+        align-items: center;
+      }
+
+      .ref-title {
+        display: flex;
+        flex-direction: column;
+
+      }
+
+      .ref-title p {
+        color: black;
+        margin: 5px;
+      }
+
+      .ref-title a {
+        color: #1b51c7;
+        text-decoration: none;
+        
+      }      
+
+      .delete-link {
+        text-decoration: none;
+        font-weight: 600;
+        color: darkred;
+        font-size: 22px;
+        margin-right: 5px;
+      }
+
+      #search-add-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+      }
+
+      #add-link {
+        color: #1b51c7;
+        text-decoration: none;
+        font-size: 42px;
+        text-shadow: 1px 1px 2px darkgrey;
+      }
+
+      input[type=text],
+      input[type=password],
+      input[type=number],
+      textarea {
+        border: 1px solid royalblue;
+        border-radius: 5px;
+        padding: 10px;
+        width: 90%;
+      }
+
+      label {
+        padding-top: 10px !important;
+        display: block;
+      }
+
+      .button {
+        border: 1px solid royalblue;
+        background-color: #fafafa;
+        color: royalblue;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .card-body {
+        padding: 20px;
+      }
+
+
+
+    </style>
+
+  </head>
+  
+  <body>
+
+    <div class="container">
+      {% block content %}
+
+      {% endblock content %}
+    </div>  
+
+  </body>
+
+</html>
